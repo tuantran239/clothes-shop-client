@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  react-app:
+    build: .
+    container_name: react-struct
+    ports:
+      - '80:80'
