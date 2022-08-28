@@ -2,10 +2,11 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
+const CopyPlugin = require('copy-webpack-plugin')
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin')
 
 const nodeEnv = process.env.NODE_ENV || 'development'
-const port = process.env.PORT || 4000
+const port = process.env.PORT || 3000
 
 module.exports = {
   entry: './src/index.tsx',
@@ -36,6 +37,10 @@ module.exports = {
         test: /\.tsx?$/,
         use: 'ts-loader',
         exclude: /node_modules/
+      },
+      {
+        test: /\.(png|jpeg|jpg|gif)$/,
+        type: 'asset/resource'
       }
     ]
   },
@@ -48,6 +53,9 @@ module.exports = {
     }),
     new CleanWebpackPlugin({
       cleanAfterEveryBuildPatterns: ['build']
+    }),
+    new CopyPlugin({
+      patterns: [{ from: 'public/images', to: 'images' }]
     })
   ],
   devServer: {

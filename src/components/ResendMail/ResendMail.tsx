@@ -46,8 +46,9 @@ const ResendMail = ({ body }: PropsType) => {
         >
           <h3>Check your email to verify email</h3>
           <ButtonCustom
+            className="my-3"
             variant="primary"
-            block={false}
+            block={true}
             loading={loading}
             onClick={onClickHandler}
           >
