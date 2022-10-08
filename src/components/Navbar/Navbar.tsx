@@ -27,9 +27,9 @@ import { ApiUrl, IsLogin, RouteUrl } from '@App/constants'
 import { useQuery } from 'react-hooks-axios'
 import { useRecoilValue } from 'recoil'
 import { User } from '@App/recoils/user/atom'
+import { NumberOfCart } from '@App/recoils/cart/atom'
 
 import './Navbar.css'
-import { NumberOfCart } from '@App/recoils/cart/atom'
 
 const Navbar = () => {
   const [searchParams] = useSearchParams()
@@ -49,13 +49,11 @@ const Navbar = () => {
 
   const onSearchHandler = () => {
     navigate(`/products?search=${s}`, { replace: true })
-    window.location.reload()
   }
 
   const onSumitHandler = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     navigate(`/products?search=${s}`, { replace: true })
-    window.location.reload()
   }
 
   const onNavigate = (url: string) => {

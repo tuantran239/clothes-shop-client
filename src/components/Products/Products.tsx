@@ -47,7 +47,7 @@ const Products = ({ filter, path }: PropsType) => {
         setPage(1)
       }
     })
-  }, [filter])
+  }, [filter, search])
 
   useEffect(() => {
     navigate(
