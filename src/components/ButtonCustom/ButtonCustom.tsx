@@ -7,22 +7,24 @@ type Element = JSXElement | null
 
 interface PropsType extends ButtonHTMLAttributes<HTMLButtonElement> {
   icon?: Element
-  variant: Variant
-  block: boolean
+  variant?: Variant
+  block?: boolean
   loading?: boolean
   children: React.ReactNode
+  textloading?: string
 }
 
 const ButtonCustom = ({
   children,
   icon: Icon,
   className,
-  variant,
+  variant = 'primary',
   type,
-  block,
+  block = false,
   loading,
   onClick,
-  disabled
+  disabled,
+  textloading
 }: PropsType) => {
   return (
     <Fragment>
@@ -40,7 +42,7 @@ const ButtonCustom = ({
               {loading && (
                 <>
                   <Spinner size="sm" animation="border" variant="light" />{' '}
-                  Loading...
+                  {textloading || 'Loading...'}
                 </>
               )}
               {!loading && children}
@@ -61,7 +63,7 @@ const ButtonCustom = ({
             {loading && (
               <>
                 <Spinner size="sm" animation="border" variant="light" />{' '}
-                Loading...
+                {textloading || 'Loading...'}
               </>
             )}
             {!loading && children}

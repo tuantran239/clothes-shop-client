@@ -20,6 +20,9 @@
         "indent": "off",
         "no-undef": "off",
         "no-useless-catch": "off",
-        "no-multiple-empty-lines": "off"
+        "no-multiple-empty-lines": "off",
+        "no-unmodified-loop-condition": "off",
+        "array-callback-return": "off",
+        "singlequote": "off"
     }
 }

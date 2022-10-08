@@ -1,13 +1,19 @@
 import React from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 
+import './ContainerAuth.css'
+
 interface PropsType {
   children: React.ReactNode
 }
 
 const ContainerAuth = ({ children }: PropsType) => {
   return (
-    <Container fluid className="d-flex flex-column justify-content-center py-3 bg-primary" style={{ height: '100vh' }}>
+    <Container
+      fluid
+      className="d-flex flex-column justify-content-center py-3 container-auth"
+      style={{ height: '100vh' }}
+    >
       <Row>
         <Col
           className="bg-light mx-auto shadow-sm px-4 py-3 rounded"

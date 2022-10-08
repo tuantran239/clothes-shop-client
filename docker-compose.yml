@@ -3,6 +3,6 @@ version: '3'
 services:
   react-app:
     build: .
-    container_name: react-struct
+    container_name: lama-shop-client
     ports:
       - '80:80'

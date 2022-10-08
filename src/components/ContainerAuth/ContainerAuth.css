@@ -1,0 +1,11 @@
+.container-auth {
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.5)
+    ),
+    url('https://media.boohoo.com/i/boohooamplience/220831_UK_New_Season_Desktop')
+      center;
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+}

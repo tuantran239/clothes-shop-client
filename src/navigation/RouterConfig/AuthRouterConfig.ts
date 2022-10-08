@@ -1,18 +1,26 @@
 import { lazy } from 'react'
-import { RouteUrl } from '../../constants/router'
+import { RouteUrl } from '@App/constants'
 
 const AuthRouterConfig = [
   {
-    component: lazy(() => import('../../screens/Login')),
-    path: RouteUrl.LOGIN
+    component: lazy(() => import('@App/screens/Login')),
+    path: RouteUrl.LOGIN,
+    isPublic: true
   },
   {
-    component: lazy(() => import('../../screens/Signup')),
-    path: RouteUrl.SIGNUP
+    component: lazy(() => import('@App/screens/Signup')),
+    path: RouteUrl.SIGNUP,
+    isPublic: true
   },
   {
-    component: lazy(() => import('../../screens/ForgotPassword')),
-    path: RouteUrl.FORGOT_PASSWORD
+    component: lazy(() => import('@App/screens/ForgotPassword')),
+    path: RouteUrl.FORGOT_PASSWORD,
+    isPublic: true
+  },
+  {
+    component: lazy(() => import('@App/screens/Profile')),
+    path: RouteUrl.PROFILE,
+    isPublic: false
   }
 ]
 

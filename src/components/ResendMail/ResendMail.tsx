@@ -2,12 +2,12 @@ import React from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import { FaAngleLeft } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
-import { RouteUrl } from '../../constants/router'
+import { RouteUrl } from '@App/constants'
 import ButtonCustom from '../ButtonCustom'
 import { useMutation } from 'react-hooks-axios'
-import ApiUrl from '../../constants/api'
-import useAlert from '../../hooks/useAlert'
-import { handleError } from '../../utils'
+import ApiUrl from '@App/constants/api'
+import useAlert from '@App/hooks/useAlert'
+import { handleError } from '@App/utils'
 
 interface PropsType {
   body: any

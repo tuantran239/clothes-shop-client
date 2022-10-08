@@ -1,0 +1,14 @@
+.product-image {
+  cursor: pointer;
+}
+
+.product-title {
+  cursor: pointer;
+}
+
+.product-color {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  margin-right: 5px;
+}

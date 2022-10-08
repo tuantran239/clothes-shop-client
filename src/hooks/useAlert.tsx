@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import { ErrorResponse } from '../types/error'
+import { ErrorResponse } from '@App/types/error'
 import Swal from 'sweetalert2'
 import { renderToString } from 'react-dom/server'
 
@@ -54,6 +54,14 @@ const useAlert = () => {
     })
   }
 
+  const warningModal = (input: JSX.Element) => {
+    const str = renderToString(input)
+    const model = Modal(str)
+    model.fire({
+      icon: 'warning'
+    })
+  }
+
   const successToast = (title: string) => {
     const toast = Toast()
     toast.fire({
@@ -62,7 +70,15 @@ const useAlert = () => {
     })
   }
 
-  return { errorModal, successToast }
+  const errorToast = (title: string) => {
+    const toast = Toast()
+    toast.fire({
+      icon: 'error',
+      title
+    })
+  }
+
+  return { errorModal, warningModal, successToast, errorToast }
 }
 
 export default useAlert

@@ -1,9 +1,8 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
-const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
 const CopyPlugin = require('copy-webpack-plugin')
-const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin')
+const Dotenv = require('dotenv-webpack')
 
 const nodeEnv = process.env.NODE_ENV || 'development'
 const port = process.env.PORT || 3000
@@ -45,9 +44,15 @@ module.exports = {
     ]
   },
   resolve: {
+    alias: {
+      '@App': path.resolve(__dirname, './src')
+    },
     extensions: ['.js', '.jsx', '.json', '.ts', '.tsx']
   },
   plugins: [
+    new Dotenv({
+      path: path.join(__dirname, '.env')
+    }),
     new HtmlWebpackPlugin({
       template: './public/index.htm'
     }),

@@ -2,15 +2,16 @@ import React, { useState } from 'react'
 import { Form } from 'react-bootstrap'
 import { FaSignInAlt, FaUserPlus } from 'react-icons/fa'
 import { Link, useNavigate } from 'react-router-dom'
-import ButtonCustom from '../../components/ButtonCustom'
-import ContainerAuth from '../../components/ContainerAuth'
-import GoogleLogin from '../../components/GoogleLogin'
-import { RouteUrl } from '../../constants/router'
-import useAlert from '../../hooks/useAlert'
+import ButtonCustom from '@App/components/ButtonCustom'
+import ContainerAuth from '@App/components/ContainerAuth'
+import GoogleLogin from '@App/components/GoogleLogin'
+import { RouteUrl } from '@App/constants'
+import useAlert from '@App/hooks/useAlert'
 import { useMutation } from 'react-hooks-axios'
-import ApiUrl from '../../constants/api'
-import { handleError } from '../../utils'
+import ApiUrl from '@App/constants/api'
+import { handleError } from '@App/utils'
 import { useChangeEvent } from 'react-hooks-custom'
+import styled from 'styled-components'
 
 const Login = () => {
   const navigate = useNavigate()
@@ -32,7 +33,9 @@ const Login = () => {
     login({
       body: input,
       onCompleted() {
+        localStorage.setItem('isLogin', 'true')
         navigate('/', { replace: true })
+        window.location.reload()
       },
       onError(error) {
         alert.errorModal(handleError(error))

@@ -1,7 +1,21 @@
+body {
+  overflow-x: hidden;
+}
+
 .bg-light {
   background: rgb(245, 245, 245) !important;
 }
 
 .bg-primary {
   background: rgb(90, 141, 217) !important;
+}
+
+.btn.btn-teal {
+  background: teal !important;
+  color: white !important;
+  border: 1px solid teal !important;
+}
+
+.modal-header {
+  border: 0px !important;
 }

@@ -1,7 +1,7 @@
 import React from 'react'
 import { FaGooglePlusG } from 'react-icons/fa'
-import ButtonCustom from '../ButtonCustom'
-import ApiUrl from '../../constants/api'
+import ButtonCustom from '@App/components/ButtonCustom'
+import ApiUrl from '@App/constants/api'
 
 const GoogleLogin = () => {
   const onClickHandler = () => {
